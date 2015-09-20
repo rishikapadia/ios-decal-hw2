@@ -14,13 +14,62 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-12-JcF">
-                    <rect key="frame" x="8" y="162" width="30" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gRt-12-JcF">
+                    <rect key="frame" x="126" y="135" width="122" height="65"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="30" id="eu0-xj-Jov"/>
                         <constraint firstAttribute="height" constant="30" id="rFT-bm-aBM"/>
                     </constraints>
-                    <state key="normal" title="N"/>
+                    <state key="normal" title="N" backgroundImage="next.jpg"/>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="__________________________________________________________" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GE8-8u-SF9">
+                    <rect key="frame" x="-1" y="110" width="376" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ar0-MU-BF2">
+                    <rect key="frame" x="0.0" y="135" width="97" height="65"/>
+                    <state key="normal" backgroundImage="delete.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jib-NC-Xhx">
+                    <rect key="frame" x="288" y="135" width="87" height="65"/>
+                    <state key="normal" backgroundImage="return.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1C-B2-zkP">
+                    <rect key="frame" x="107" y="-4" width="102" height="65"/>
+                    <state key="normal" image="image2.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yEN-wh-AHt">
+                    <rect key="frame" x="223" y="0.0" width="54" height="65"/>
+                    <state key="normal" image="image3.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cbV-7U-l58">
+                    <rect key="frame" x="298" y="0.0" width="56" height="65"/>
+                    <state key="normal" image="image4.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne1-FY-dG6">
+                    <rect key="frame" x="50" y="63" width="117" height="65"/>
+                    <state key="normal" image="image6.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="op0-xY-1Oo">
+                    <rect key="frame" x="5" y="63" width="60" height="65"/>
+                    <state key="normal" image="image5.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gK7-ll-amU">
+                    <rect key="frame" x="156" y="63" width="63" height="65"/>
+                    <state key="normal" image="image7.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3R6-T9-zX3">
+                    <rect key="frame" x="222" y="62" width="103" height="65"/>
+                    <state key="normal" image="image8.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEU-tA-Da6">
+                    <rect key="frame" x="327" y="63" width="69" height="65"/>
+                    <state key="normal" image="image9.jpg"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1pU-Gg-aCu">
+                    <rect key="frame" x="24" y="0.0" width="65" height="65"/>
+                    <state key="normal" image="image1.jpg"/>
                 </button>
             </subviews>
             <constraints>
@@ -32,4 +81,18 @@
             <point key="canvasLocation" x="605.5" y="542"/>
         </view>
     </objects>
+    <resources>
+        <image name="delete.jpg" width="97" height="65"/>
+        <image name="image1.jpg" width="65" height="65"/>
+        <image name="image2.jpg" width="102" height="65"/>
+        <image name="image3.jpg" width="51" height="65"/>
+        <image name="image4.jpg" width="56" height="65"/>
+        <image name="image5.jpg" width="57" height="65"/>
+        <image name="image6.jpg" width="116" height="65"/>
+        <image name="image7.jpg" width="61" height="65"/>
+        <image name="image8.jpg" width="97" height="65"/>
+        <image name="image9.jpg" width="65" height="65"/>
+        <image name="next.jpg" width="122" height="65"/>
+        <image name="return.jpg" width="87" height="65"/>
+    </resources>
 </document>
