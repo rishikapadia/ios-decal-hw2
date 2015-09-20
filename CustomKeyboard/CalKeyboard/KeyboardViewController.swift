@@ -10,7 +10,10 @@ import UIKit
 
 class KeyboardViewController: UIInputViewController {
 
+    @IBOutlet var deleteKeyboardButton: UIButton!
     @IBOutlet var nextKeyboardButton: UIButton!
+    @IBOutlet var returnKeyboardButton: UIButton!
+    @IBOutlet var imagesKeyboardButtons: Array<UIButton>!
     
     var keyboardView: UIView!
 
@@ -44,7 +47,45 @@ class KeyboardViewController: UIInputViewController {
         keyboardView.frame = view.frame
         view.addSubview(keyboardView)
         view.backgroundColor = keyboardView.backgroundColor
+        
+        //control buttons
+        deleteKeyboardButton.addTarget(self, action: "deleteChar", forControlEvents: .TouchUpInside)
         nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside) // advanceToNextInputMode is already defined in template
+        returnKeyboardButton.addTarget(self, action: "returnChar", forControlEvents: .TouchUpInside)
+        
+        //add image buttons
+        for img in imagesKeyboardButtons {
+            img.addTarget(self, action: "keyTapped", forControlEvents: .TouchUpInside)
+        }
+    }
+    
+    func deleteChar(sender: AnyObject?) {
+        textDocumentProxy.deleteBackward()
+        //(textDocumentProxy as UIKeyInput).deleteBackward()
+    }
+    
+    func returnChar(sender: AnyObject?) {
+        textDocumentProxy.insertText("\n")
+    }
+    
+    func keyTapped(sender: UIButton!) {
+        (self.textDocumentProxy as UIKeyInput).insertText("Needs full access")
+        return
+        
+        if (isOpenAccessGranted() == false) {
+            // Prompt user to allow full access here.
+            textDocumentProxy.insertText("Needs full access")
+        }
+        else {
+            let file = "image\(sender.tag)"
+            let image = UIImage(named:file as String)
+            let data = NSData(data: UIImagePNGRepresentation(image!)!)
+            UIPasteboard.generalPasteboard().setData(data, forPasteboardType: "public.png")
+        }
+    }
+
+    func isOpenAccessGranted() -> Bool {
+        return UIPasteboard.generalPasteboard().isKindOfClass(UIPasteboard)
     }
 
 
