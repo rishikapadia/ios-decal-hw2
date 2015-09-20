@@ -54,30 +54,30 @@ class KeyboardViewController: UIInputViewController {
         returnKeyboardButton.addTarget(self, action: "returnChar", forControlEvents: .TouchUpInside)
         
         //add image buttons
-        for img in imagesKeyboardButtons {
-            img.addTarget(self, action: "keyTapped", forControlEvents: .TouchUpInside)
-        }
+        //for img in imagesKeyboardButtons {
+        //    img.addTarget(self, action: "keyTapped", forControlEvents: .TouchUpInside)
+        //}
     }
     
-    func deleteChar(sender: AnyObject?) {
+    func deleteChar() {
         textDocumentProxy.deleteBackward()
         //(textDocumentProxy as UIKeyInput).deleteBackward()
     }
     
-    func returnChar(sender: AnyObject?) {
+    func returnChar() {
         textDocumentProxy.insertText("\n")
     }
     
-    func keyTapped(sender: UIButton!) {
-        (self.textDocumentProxy as UIKeyInput).insertText("Needs full access")
-        return
+    @IBAction func keyTapped(sender: UIButton!) {
+        //(self.textDocumentProxy as UIKeyInput).insertText("Needs full access")
+        //return
         
         if (isOpenAccessGranted() == false) {
             // Prompt user to allow full access here.
             textDocumentProxy.insertText("Needs full access")
         }
         else {
-            let file = "image\(sender.tag)"
+            let file = "image\(sender!.tag)"
             let image = UIImage(named:file as String)
             let data = NSData(data: UIImagePNGRepresentation(image!)!)
             UIPasteboard.generalPasteboard().setData(data, forPasteboardType: "public.png")
@@ -87,6 +87,4 @@ class KeyboardViewController: UIInputViewController {
     func isOpenAccessGranted() -> Bool {
         return UIPasteboard.generalPasteboard().isKindOfClass(UIPasteboard)
     }
-
-
 }
