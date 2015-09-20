@@ -109,7 +109,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" image="image1.jpg"/>
                     <connections>
-                        <action selector="keyTapped:" destination="-1" eventType="touchUpInside" id="Dsi-Ip-oN0"/>
+                        <action selector="keyTapped:" destination="-1" eventType="touchUpInside" id="nm0-8J-UZP"/>
                     </connections>
                 </button>
                 <view opaque="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" id="iBF-23-1cI">

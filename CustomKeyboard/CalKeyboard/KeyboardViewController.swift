@@ -52,11 +52,6 @@ class KeyboardViewController: UIInputViewController {
         deleteKeyboardButton.addTarget(self, action: "deleteChar", forControlEvents: .TouchUpInside)
         nextKeyboardButton.addTarget(self, action: "advanceToNextInputMode", forControlEvents: .TouchUpInside) // advanceToNextInputMode is already defined in template
         returnKeyboardButton.addTarget(self, action: "returnChar", forControlEvents: .TouchUpInside)
-        
-        //add image buttons
-        //for img in imagesKeyboardButtons {
-        //    img.addTarget(self, action: "keyTapped", forControlEvents: .TouchUpInside)
-        //}
     }
     
     func deleteChar() {
@@ -68,19 +63,24 @@ class KeyboardViewController: UIInputViewController {
         textDocumentProxy.insertText("\n")
     }
     
-    @IBAction func keyTapped(sender: UIButton!) {
+    @IBAction func keyTapped(sender: UIButton) {
         //(self.textDocumentProxy as UIKeyInput).insertText("Needs full access")
         //return
         
-        if (isOpenAccessGranted() == false) {
+        
+        if (!isOpenAccessGranted()) {
             // Prompt user to allow full access here.
             textDocumentProxy.insertText("Needs full access")
         }
         else {
-            let file = "image\(sender!.tag)"
-            let image = UIImage(named:file as String)
-            let data = NSData(data: UIImagePNGRepresentation(image!)!)
-            UIPasteboard.generalPasteboard().setData(data, forPasteboardType: "public.png")
+            let file = "image\(sender.tag).jpg"
+            
+            let image = UIImage(named: file)
+            UIPasteboard.generalPasteboard().image = image;
+            
+            /*let alert = UIAlertController(title: "Keyboard", message: "Image copied to clipboard", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Got it", style: .Cancel, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)*/
         }
     }
 
